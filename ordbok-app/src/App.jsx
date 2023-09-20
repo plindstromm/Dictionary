@@ -8,7 +8,10 @@ function App() {
   return (
     <div className="App">
       <Header/>
+
+      <div className='search-section'>
       <Searchbar/>
+      </div>
       
     </div>
   );

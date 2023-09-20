@@ -2,5 +2,14 @@
     width: 100%;
     height: 5rem;
     background: linear-gradient(to left, rgb(4, 4, 74), rgb(25, 23, 54),rgb(4, 4, 74));
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
 
+.header h2{
+    margin-left: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

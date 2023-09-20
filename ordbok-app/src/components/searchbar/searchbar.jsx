@@ -43,16 +43,17 @@ function Searchbar() {
   return (
     <div className="searchbar">
       <input
+      className='search-input'
         type="text"
         value={word}
         onChange={(e) => setWord(e.target.value)}
         placeholder="Enter a word"
       />
-      <button onClick={fetchWordDefinition}>Fetch Definition</button>
+      <button className='search-button' onClick={fetchWordDefinition}>Fetch Definition</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {definition && <p className='description'><strong >Definition:</strong> {definition}</p>}
       {audioUrl && (
-        <div>
+        <div className='audio'>
          
           <audio controls>
             <source src={audioUrl} type="audio/mpeg" />
