@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+body{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+   background-color: rgb(28, 28, 87);
+    
+}
+
+button{
+    width: 8rem;
+}
+ input{
+    width: 10rem;
+  
+ }
+
+ audio{
+    width: 15rem;
+    align-self: center;
+ }
