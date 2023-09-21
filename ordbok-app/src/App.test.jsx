@@ -1,13 +1,17 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Searchbar from './components/searchbar/searchbar';
-import App from './App';
+
 import '@testing-library/jest-dom';
+import Header from './components/header/header';
 
-describe('App', () => {
-  it('renders headline', () => {
-    render(<App title="React" />);
+describe('Header', () => {
+  it('renders h2 tag', () => {
+    render(<Header />);
+    //Kollar så att h2 tagen renderas i header
+    const h2Element = screen.getByText('Dictionary')
+    expect(h2Element).toBeInTheDocument();
 
-    screen.debug();
+    
   });
 
   describe('Searchbar', () => {
