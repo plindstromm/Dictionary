@@ -8,6 +8,7 @@ function Searchbar() {
   const [definition, setDefinition] = useState(null);
   const [audioUrl, setAudioUrl] = useState(null);
   const [phonetic, setPhonetic] = useState(null);
+  const [example, setExample] = useState(null); 
   const [error, setError] = useState(null);
 
   // API fetch happens on click
@@ -16,6 +17,7 @@ function Searchbar() {
     setDefinition(null);
     setAudioUrl(null);
     setPhonetic(null);
+    setExample(null); 
     setError(null);
 
     if (word) {
@@ -28,10 +30,14 @@ function Searchbar() {
         }
 
         const data = await response.json();
-        console.log(data);
+
+        console.log(data)
 
         if (data[0]?.meanings[0]?.definitions[0]?.definition) {
           setDefinition(data[0].meanings[0].definitions[0].definition);
+        }
+        if (data[0]?.meanings[0]?.definitions[0]?.example) {
+          setExample(data[0].meanings[0].definitions[0].example); 
         }
         if (data[0]?.phonetics[0]?.audio) {
           setAudioUrl(data[0].phonetics[0].audio);
@@ -42,9 +48,10 @@ function Searchbar() {
         setError(null);
       } catch (error) {
         setError('Error fetching the API: ' + error.message);
-        setDefinition(null);
+        setDefinition(null); //resetar på error
         setAudioUrl(null);
         setPhonetic(null);
+        setExample(null); 
       }
     } else {
       setError('No word entered');
@@ -64,6 +71,7 @@ function Searchbar() {
       {error && <p className='error' style={{ color: 'red' }}>{error}</p>}
       {definition && <p className='description'><strong>Definition:</strong> {definition}</p>}
       {phonetic && <p className='phonetic'><strong>Phonetic:</strong> {phonetic}</p>}
+      {example && <p className='example'><strong>Example:</strong> {example}</p>}  {/* <-- Display the example */}
       {audioUrl && (
         <div className='audio'>
           <audio controls>
@@ -77,3 +85,4 @@ function Searchbar() {
 }
 
 export default Searchbar;
+

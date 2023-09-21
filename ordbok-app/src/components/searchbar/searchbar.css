@@ -2,7 +2,7 @@
 .description{
    max-width: 300px;
    text-align: left;
-   margin-top: 4rem;
+   margin-top: 2rem;
    min-height: 3rem;
    background-color: #edf0f3;
    color: rgb(2, 73, 135);
@@ -21,6 +21,16 @@
    padding: .6rem;
    border-radius: 5px;
    font-family: Arial, Helvetica, sans-serif;
+}
+
+.example{
+  max-width: 300px;
+  padding: .6rem;
+  background-color: #edf0f3;
+  margin-top: .4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(2, 73, 135);
+  border-radius: 5px;
 }
 
 strong{

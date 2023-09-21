@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Searchbar from './components/searchbar/searchbar';
-
 import '@testing-library/jest-dom';
 import Header from './components/header/header';
+
 
 describe('Header', () => {
   it('renders h2 tag', () => {
@@ -31,11 +31,20 @@ describe('Header', () => {
       const inputElement = screen.getByPlaceholderText(/Enter a word/i);
       const buttonElement = screen.getByText(/Fetch Definition/i);
 
-      fireEvent.change(inputElement, { target: { value: 'bot' } });
-      expect(inputElement.value).toBe('bot');
+      fireEvent.change(inputElement, { target: { value: 'cool' } });
+      expect(inputElement.value).toBe('cool');
 
       fireEvent.click(buttonElement);
     });
+      //Kollar error när inget ord skrivits in
+    it('should display an error when no word is entered', () => {
+      render(<Searchbar />);
+      const buttonElement = screen.getByText(/Fetch Definition/i);
+      fireEvent.click(buttonElement);
+      const errorElement = screen.getByText(/No word entered/i);
+      expect(errorElement).toBeInTheDocument();
+    });
+     
   });
 });
 
