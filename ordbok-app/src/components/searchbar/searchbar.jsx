@@ -3,7 +3,7 @@ import './searchbar.css';
 
 function Searchbar() {
 
-  // States for each element
+  // States för varje elememnt
   const [word, setWord] = useState('');
   const [definition, setDefinition] = useState(null);
   const [audioUrl, setAudioUrl] = useState(null);
@@ -11,7 +11,7 @@ function Searchbar() {
   const [example, setExample] = useState(null); 
   const [error, setError] = useState(null);
 
-  // API fetch happens on click
+  // API fetch sker på klick
   const fetchWordDefinition = async () => {
     // Reset values
     setDefinition(null);
@@ -21,9 +21,9 @@ function Searchbar() {
     setError(null);
 
     if (word) {
-      const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+      const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
       try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(url);
 
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
