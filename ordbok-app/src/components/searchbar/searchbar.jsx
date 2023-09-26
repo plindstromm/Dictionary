@@ -19,7 +19,7 @@ function Searchbar() {
     setPhonetic(null);
     setExample(null); 
     setError(null);
-
+    //fetch sker endas om ett ord matats in i inputfäletet
     if (word) {
       const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
       try {
@@ -54,7 +54,7 @@ function Searchbar() {
         setExample(null); 
       }
     } else {
-      setError('No word entered');
+      setError('No word entered'); //error om inget ord matats in
     }
   };
 
