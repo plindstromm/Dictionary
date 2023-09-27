@@ -51,7 +51,7 @@ describe('Header', () => {
   });
 
   describe('Searchbar', () => {
-    it('should render the button and input field', async () => {
+    it('should render the button and input field', () => {
       render(<Searchbar />);
       const inputElement = screen.getByPlaceholderText(/Enter a word/i);
       const buttonElement = screen.getByText(/Fetch Definition/i);
