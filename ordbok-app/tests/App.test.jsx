@@ -90,5 +90,19 @@ describe('Header', () => {
       expect(phoneticElement).toBeInTheDocument();
     }); 
   });
+
+  it('should render audio element when audioUrl is available', async () => {
+    render(<Searchbar />);
+
+    const inputElement = screen.getByPlaceholderText(/Enter a word/i);
+    const buttonElement = screen.getByText(/Fetch Definition/i);
+
+    fireEvent.change(inputElement, { target: { value: 'bot' } });
+    fireEvent.click(buttonElement);
+
+    // Using findByTestId to find the audio element
+    const audioElement = await screen.findByTestId('audio-element');
+    expect(audioElement).toBeInTheDocument();
+  });
 });
 

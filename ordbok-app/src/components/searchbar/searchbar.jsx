@@ -71,10 +71,10 @@ function Searchbar() {
       {error && <p className='error' style={{ color: 'red' }}>{error}</p>}
       {definition && <p className='description'><strong>Definition:</strong> {definition}</p>}
       {phonetic && <p className='phonetic'><strong>Phonetic:</strong> {phonetic}</p>}
-      {example && <p className='example'><strong>Example:</strong> {example}</p>}  {/* <-- Display the example */}
+      {example && <p className='example'><strong>Example:</strong> {example}</p>}  
       {audioUrl && (
         <div className='audio'>
-          <audio controls>
+          <audio controls data-testid="audio-element">
             <source src={audioUrl} type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
