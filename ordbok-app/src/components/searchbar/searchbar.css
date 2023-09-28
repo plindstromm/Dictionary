@@ -4,12 +4,23 @@
   align-items: center;
   flex-direction: column;
   max-width: 600px;
+}
+.word-title{
+  max-width: 300px;
+ text-align: center;
+  margin-top: 4rem;
+  min-height: 3rem;
+  background-color: #edf0f3;
+  color: rgb(2, 73, 135);
+  padding: .6rem;
+  border-radius: 5px;
+
 
 }
 .description{
    max-width: 300px;
    text-align: left;
-   margin-top: 2rem;
+    margin-top: .4rem;
    min-height: 3rem;
    background-color: #edf0f3;
    color: rgb(2, 73, 135);
