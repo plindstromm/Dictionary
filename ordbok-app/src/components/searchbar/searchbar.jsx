@@ -29,7 +29,7 @@ function Searchbar() {
 
     // fetch sker endast om ett ord matats in i inputfältet
     if (word) {
-      setClickedWord(word); // Set the clicked word here
+      setClickedWord(word); // används för att rendera ordet nedan
       
       const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
       try {
